@@ -35,6 +35,10 @@ export function Header() {
           </div>
           
           <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <span className="text-lg font-medium text-gray-700 dark:text-gray-300">🌤️ 25°C</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">{format(currentTime, "hh:mm a")}</span>
+            </div>
             <ThemeToggle />
             <button className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-pink-500/10 to-violet-500/10 text-pink-600 dark:text-pink-400 hover:from-pink-500/20 hover:to-violet-500/20 transition-all duration-300">
               <User className="w-5 h-5" />

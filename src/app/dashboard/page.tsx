@@ -13,6 +13,9 @@ import {
 import { PomodoroTimer } from "@/components/dashboard/PomodoroTimer"
 import { BackgroundSounds } from "@/components/dashboard/BackgroundSounds"
 import { ProductivityAnalytics } from "@/components/dashboard/ProductivityAnalytics"
+import { TaskList } from "@/components/dashboard/TaskList"
+import { QuickNotes as QuickNotesWidget } from "@/components/dashboard/QuickNotes"
+import { DailyQuote } from "@/components/dashboard/DailyQuote"
 
 // Components for each section
 function TaskSummary() {
@@ -23,7 +26,7 @@ function TaskSummary() {
   }
 
   return (
-    <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-sm">
+    <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-lg">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">
           Task Summary
@@ -53,7 +56,7 @@ function TaskSummary() {
 
 function QuickNotes() {
   return (
-    <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-sm">
+    <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-lg">
       <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4">
         Quick Notes
       </h2>
@@ -69,20 +72,15 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       {/* Quote of the day */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 text-white">
-        <p className="text-lg font-medium mb-2">
-          "The only way to do great work is to love what you do."
-        </p>
-        <p className="text-sm opacity-80">- Steve Jobs</p>
-      </div>
+      <DailyQuote />
 
       {/* Main grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <PomodoroTimer />
         </div>
-        <TaskSummary />
-        <QuickNotes />
+        <TaskList />
+        <QuickNotesWidget />
         <BackgroundSounds />
         <div className="lg:col-span-2">
           <ProductivityAnalytics />
